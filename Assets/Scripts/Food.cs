@@ -1,20 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Food : MonoBehaviour
 {
     Heat currentHeatSource = null;
-    public float coockingLevel;
-    public float cookingMax;
+    public float cookingLevel;
+    public float cookingMaxLevel;
+    public Slider cookingSlider;
 
+    public float overcookingLevel;
+    public float overcookingMaxLevel;
+    public GameObject overcookingSliderGameObject;
+    private Slider overcookingSlider;
+    bool isOvercooking = false;
+    public ParticleSystem Fire;
+
+    bool isBurned = false;
     private void Awake()
     {
+        isOvercooking = false;
         currentHeatSource = null;
+        cookingSlider.maxValue = cookingMaxLevel;
+        cookingSlider.value = 0;
     }
 
     private void Update()
     {
+        if (isBurned)
+            return;
+
+        if (isOvercooking)
+        {
+            Overcooking();
+            return;
+        }
         Cook();
     }
 
@@ -26,15 +47,42 @@ public class Food : MonoBehaviour
         if (!currentHeatSource.isHot)
             return;
 
-        coockingLevel += Time.deltaTime;
+        cookingLevel += Time.deltaTime;
+        cookingSlider.value = cookingLevel;
 
-        if (coockingLevel >= cookingMax)
-        {
-            Debug.Log("Cocinado");
-        }
+        if (cookingLevel >= cookingMaxLevel)
+            StartOvercooking();
         else
         {
             Debug.Log("Cocinando");
+        }
+    }
+
+    private void StartOvercooking()
+    {
+        isOvercooking = true;
+        overcookingLevel = 0;
+        overcookingSliderGameObject.SetActive(true);
+        overcookingSlider = overcookingSliderGameObject.GetComponent<Slider>();
+        overcookingSlider.maxValue = overcookingMaxLevel;
+        overcookingSlider.value = 0;
+    }
+    private void Overcooking()
+    {
+        if (currentHeatSource == null)
+            return;
+
+        if (!currentHeatSource.isHot)
+            return;
+
+        overcookingLevel += Time.deltaTime;
+        overcookingSlider.value = overcookingLevel;
+
+        if (overcookingLevel > overcookingMaxLevel)
+        {
+            Debug.Log("Ya se quemo");
+            isBurned = true;
+            Fire.Play();
         }
     }
 

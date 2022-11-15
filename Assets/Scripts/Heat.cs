@@ -6,7 +6,7 @@ public class Heat : MonoBehaviour
 {
     public bool isHot = false;
     public bool isHeatSource = false;
-    Heat currentHeatSource = null;
+    public Heat currentHeatSource = null;
 
     private void Awake()
     {
