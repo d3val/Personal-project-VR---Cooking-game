@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 744162254756549015}
   m_Layer: 0
   m_Name: Pan Object
-  m_TagString: Untagged
+  m_TagString: Fire Source
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
