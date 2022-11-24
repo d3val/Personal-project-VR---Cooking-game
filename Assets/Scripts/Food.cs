@@ -5,21 +5,24 @@ using UnityEngine.UI;
 
 public class Food : MonoBehaviour
 {
-    Heat currentHeatSource = null;
-    public float cookingLevel;
-    public float cookingMaxLevel;
-    public Slider cookingSlider;
-
-    public float overcookingLevel;
-    public float overcookingMaxLevel;
-    public GameObject overcookingSliderGameObject;
+    //Cooking variables
+    private Heat currentHeatSource = null;
+    private float cookingLevel;
+    [SerializeField] float cookingMaxLevel;
+    [SerializeField] Slider cookingSlider;
+    // Overcooking variables
+    private float overcookingLevel;
+    [SerializeField] float overcookingMaxLevel;
+    [SerializeField] GameObject overcookingSliderGameObject;
     private Slider overcookingSlider;
     bool isOvercooking = false;
-    public ParticleSystem Fire;
-
-    bool isBurned = false;
+    [SerializeField] ParticleSystem Fire;
+    // Burned variables
+    private bool isBurned = false;
     private void Awake()
     {
+        cookingLevel = 0;
+        overcookingLevel = 0;
         isOvercooking = false;
         currentHeatSource = null;
         cookingSlider.maxValue = cookingMaxLevel;
@@ -39,6 +42,7 @@ public class Food : MonoBehaviour
         Cook();
     }
 
+    // Cooks the food
     private void Cook()
     {
         if (currentHeatSource == null)
@@ -52,12 +56,9 @@ public class Food : MonoBehaviour
 
         if (cookingLevel >= cookingMaxLevel)
             StartOvercooking();
-        else
-        {
-            Debug.Log("Cocinando");
-        }
     }
 
+    // Sets overcooking variables up to an initial state
     private void StartOvercooking()
     {
         isOvercooking = true;
@@ -67,6 +68,8 @@ public class Food : MonoBehaviour
         overcookingSlider.maxValue = overcookingMaxLevel;
         overcookingSlider.value = 0;
     }
+
+    // overcooks the food
     private void Overcooking()
     {
         if (currentHeatSource == null)
@@ -78,9 +81,9 @@ public class Food : MonoBehaviour
         overcookingLevel += Time.deltaTime;
         overcookingSlider.value = overcookingLevel;
 
+        // When reach the overcookingMaxLevel, plays the fire particle system.
         if (overcookingLevel > overcookingMaxLevel)
         {
-            Debug.Log("Ya se quemo");
             isBurned = true;
             Fire.Play();
         }
@@ -92,6 +95,7 @@ public class Food : MonoBehaviour
         if (!collision.gameObject.CompareTag("Fire Source"))
             return;
 
+        // Set the currentHeatSource
         currentHeatSource = collision.gameObject.GetComponent<Heat>();
     }
 
@@ -100,11 +104,14 @@ public class Food : MonoBehaviour
         if (!collision.gameObject.CompareTag("Fire Source"))
             return;
 
+        //Cleans the current Heat source.
         currentHeatSource = null;
     }
 
+    //Stops fire particle system.
     public void Extinct()
     {
-        Fire.Stop();
+        if (isBurned)
+            Fire.Stop();
     }
 }

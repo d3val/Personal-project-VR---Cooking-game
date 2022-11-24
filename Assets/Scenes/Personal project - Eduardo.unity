@@ -267,11 +267,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 492596002}
     m_Modifications:
-    - target: {fileID: 744162254756549015, guid: 0549237eb7743e9459701d52ae5fbb09,
-        type: 3}
-      propertyPath: m_MovementType
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1165276148384763875, guid: 0549237eb7743e9459701d52ae5fbb09,
         type: 3}
       propertyPath: m_RootOrder
@@ -1509,66 +1504,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1228456420}
     m_Modifications:
-    - target: {fileID: 91100187803018313, guid: 945eb287dcf5ca247bd4f404e8efa408,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 91100187803018313, guid: 945eb287dcf5ca247bd4f404e8efa408,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: ToogleHeat
-      objectReference: {fileID: 0}
-    - target: {fileID: 1646335204701942245, guid: 945eb287dcf5ca247bd4f404e8efa408,
-        type: 3}
-      propertyPath: isHot
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1646335204701942245, guid: 945eb287dcf5ca247bd4f404e8efa408,
-        type: 3}
-      propertyPath: isHeatSource
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3472373892887470584, guid: 945eb287dcf5ca247bd4f404e8efa408,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3472373892887470584, guid: 945eb287dcf5ca247bd4f404e8efa408,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: ToogleHeat
-      objectReference: {fileID: 0}
-    - target: {fileID: 3832069319236461159, guid: 945eb287dcf5ca247bd4f404e8efa408,
-        type: 3}
-      propertyPath: isHot
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3832069319236461159, guid: 945eb287dcf5ca247bd4f404e8efa408,
-        type: 3}
-      propertyPath: isHeatSource
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5430545511232038065, guid: 945eb287dcf5ca247bd4f404e8efa408,
-        type: 3}
-      propertyPath: isHot
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5430545511232038065, guid: 945eb287dcf5ca247bd4f404e8efa408,
-        type: 3}
-      propertyPath: isHeatSource
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6657860786193243495, guid: 945eb287dcf5ca247bd4f404e8efa408,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6657860786193243495, guid: 945eb287dcf5ca247bd4f404e8efa408,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: ToogleHeat
-      objectReference: {fileID: 0}
     - target: {fileID: 7645926282631468366, guid: 945eb287dcf5ca247bd4f404e8efa408,
         type: 3}
       propertyPath: m_Name
@@ -1628,26 +1563,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7668560331826383317, guid: 945eb287dcf5ca247bd4f404e8efa408,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7668560331826383317, guid: 945eb287dcf5ca247bd4f404e8efa408,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: ToogleHeat
-      objectReference: {fileID: 0}
-    - target: {fileID: 8372367297832994097, guid: 945eb287dcf5ca247bd4f404e8efa408,
-        type: 3}
-      propertyPath: isHot
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8372367297832994097, guid: 945eb287dcf5ca247bd4f404e8efa408,
-        type: 3}
-      propertyPath: isHeatSource
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 945eb287dcf5ca247bd4f404e8efa408, type: 3}
@@ -1876,27 +1791,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 597638433}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &635003587 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3567328032894224776, guid: 0549237eb7743e9459701d52ae5fbb09,
-    type: 3}
-  m_PrefabInstance: {fileID: 242492146}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &635003588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 635003587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cc7b449c6df8444fa8621617de5f274, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isHot: 0
-  isHeatSource: 0
-  currentHeatSource: {fileID: 0}
 --- !u!1 &650672841
 GameObject:
   m_ObjectHideFlags: 0
