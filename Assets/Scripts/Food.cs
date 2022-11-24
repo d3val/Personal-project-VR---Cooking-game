@@ -102,4 +102,9 @@ public class Food : MonoBehaviour
 
         currentHeatSource = null;
     }
+
+    public void Extinct()
+    {
+        Fire.Stop();
+    }
 }

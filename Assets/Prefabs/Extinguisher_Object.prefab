@@ -482,7 +482,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!1 &1816550712046210178
@@ -1148,7 +1148,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!1 &1845864049655130083
@@ -1449,10 +1449,34 @@ MonoBehaviour:
       m_Calls: []
   m_Activated:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3585075952081709749}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_Deactivated:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3257820812886460513}
+        m_TargetAssemblyTypeName: ToggleParticle, Assembly-CSharp
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -2003,7 +2027,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!1 &8713041426921417068
@@ -2115,6 +2139,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Particle_Extinguisher
       objectReference: {fileID: 0}
+    - target: {fileID: 4906387237557129729, guid: 871291940a4ecfb4099f15a85c16eaee,
+        type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4906387237557129729, guid: 871291940a4ecfb4099f15a85c16eaee,
+        type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4906387237557129729, guid: 871291940a4ecfb4099f15a85c16eaee,
+        type: 3}
+      propertyPath: CollisionModule.quality
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4906387237557129729, guid: 871291940a4ecfb4099f15a85c16eaee,
+        type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4906387237557129729, guid: 871291940a4ecfb4099f15a85c16eaee,
+        type: 3}
+      propertyPath: CollisionModule.collidesWith.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6580505844860381368, guid: 871291940a4ecfb4099f15a85c16eaee,
         type: 3}
       propertyPath: m_RootOrder
@@ -2193,3 +2242,27 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8491047436536150196}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &3585075952081709749 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4906387237557129729, guid: 871291940a4ecfb4099f15a85c16eaee,
+    type: 3}
+  m_PrefabInstance: {fileID: 8491047436536150196}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3808723583774860899 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4687419608187526871, guid: 871291940a4ecfb4099f15a85c16eaee,
+    type: 3}
+  m_PrefabInstance: {fileID: 8491047436536150196}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3257820812886460513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3808723583774860899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad0a2892d8b703341afc39a5cf89bef8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
