@@ -10,7 +10,7 @@ public class Heat : MonoBehaviour
 
     private void Awake()
     {
-        isHeatSource = false;
+        isHot = false;
     }
     private void Update()
     {
@@ -45,7 +45,8 @@ public class Heat : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-
+        if (isHeatSource)
+            return;
 
         if (!collision.gameObject.CompareTag("Fire Source"))
             return;
