@@ -10,6 +10,7 @@ public class Food : MonoBehaviour
     private float cookingLevel;
     [SerializeField] float cookingMaxLevel;
     [SerializeField] Slider cookingSlider;
+    [SerializeField] AudioClip cookingSound = null;
     // Overcooking variables
     private float overcookingLevel;
     [SerializeField] float overcookingMaxLevel;
@@ -19,8 +20,12 @@ public class Food : MonoBehaviour
     [SerializeField] ParticleSystem Fire;
     // Burned variables
     private bool isBurned = false;
+    [SerializeField] AudioClip burningSound = null;
+
+    AudioSource audioSource;
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         cookingLevel = 0;
         overcookingLevel = 0;
         isOvercooking = false;
@@ -49,13 +54,25 @@ public class Food : MonoBehaviour
             return;
 
         if (!currentHeatSource.isHot)
+        {
+            audioSource.clip = null;
+            audioSource.Stop();
             return;
+        }
 
         cookingLevel += Time.deltaTime;
         cookingSlider.value = cookingLevel;
 
         if (cookingLevel >= cookingMaxLevel)
             StartOvercooking();
+
+        if (audioSource.clip == cookingSound)
+            return;
+        if (audioSource.isPlaying)
+            return;
+
+        audioSource.clip = cookingSound;
+        audioSource.Play();
     }
 
     // Sets overcooking variables up to an initial state
@@ -76,7 +93,11 @@ public class Food : MonoBehaviour
             return;
 
         if (!currentHeatSource.isHot)
+        {
+            audioSource.clip = null;
+            audioSource.Stop();
             return;
+        }
 
         overcookingLevel += Time.deltaTime;
         overcookingSlider.value = overcookingLevel;
@@ -85,8 +106,18 @@ public class Food : MonoBehaviour
         if (overcookingLevel > overcookingMaxLevel)
         {
             isBurned = true;
+            audioSource.clip = burningSound;
+            audioSource.Play();
             Fire.Play();
         }
+
+        if (audioSource.clip == cookingSound)
+            return;
+        if (audioSource.isPlaying)
+            return;
+
+        audioSource.clip = cookingSound;
+        audioSource.Play();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -112,6 +143,9 @@ public class Food : MonoBehaviour
     public void Extinct()
     {
         if (isBurned)
+        {
+            audioSource.Stop();
             Fire.Stop();
+        }
     }
 }
