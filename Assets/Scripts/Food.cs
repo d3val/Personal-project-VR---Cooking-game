@@ -51,8 +51,11 @@ public class Food : MonoBehaviour
     private void Cook()
     {
         if (currentHeatSource == null)
+        {
+            audioSource.clip = null;
+            audioSource.Stop();
             return;
-
+        }
         if (!currentHeatSource.isHot)
         {
             audioSource.clip = null;
@@ -90,8 +93,11 @@ public class Food : MonoBehaviour
     private void Overcooking()
     {
         if (currentHeatSource == null)
+        {
+            audioSource.clip = null;
+            audioSource.Stop();
             return;
-
+        }
         if (!currentHeatSource.isHot)
         {
             audioSource.clip = null;
